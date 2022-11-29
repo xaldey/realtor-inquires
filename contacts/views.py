@@ -44,8 +44,8 @@ def contact(request):
             "Пришла заявка по объявлению "
             + listing
             + ". Авторизуйтесь на сайте для получения более подробной информации.",
-            "pencil_2004@mail.ru",
-            [realtor_email, "pencil_2004@mail.ru"],
+            "test_2004@mail.ru",
+            [realtor_email, "test_2004@mail.ru"],
             fail_silently=False,
         ) """
 

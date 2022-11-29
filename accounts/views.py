@@ -18,12 +18,12 @@ def register(request):
         if password == password2:
             # Check username
             if User.objects.filter(username=username).exists():
-                messages.error(request, "That username is taken")
+                messages.error(request, "Это имя пользователя уже занято.")
                 return redirect("register")
             else:
                 # Check email
                 if User.objects.filter(email=email).exists():
-                    messages.error(request, "That email is been used")
+                    messages.error(request, "Этот почтовый ящик уже был использован.")
                     return redirect("register")
                 else:
                     # Looks good!
@@ -39,10 +39,12 @@ def register(request):
                     # messages.success(request, "You are now logged in")
                     # return redirect("index")
                     user.save()
-                    messages.success(request, "You are now registered and can log in")
+                    messages.success(
+                        request, "Вы зарегистрированы и можете авторизоваться на сайте"
+                    )
                     return redirect("login")
         else:
-            messages.error(request, "Passwords dont match!")
+            messages.error(request, "Пароли не совпадают!")
             return redirect("register")
     else:
         return render(request, "accounts/register.html")
@@ -58,10 +60,10 @@ def login(request):
 
         if user is not None:
             auth.login(request, user)
-            messages.success(request, "You are now logged in")
+            messages.success(request, "Вы успешно авторизованы")
             return redirect("dashboard")
         else:
-            messages.error(request, "Invalid credentials")
+            messages.error(request, "Указаны некорректные данные для входа")
             return redirect("login")
     else:
         return render(request, "accounts/login.html")
@@ -70,7 +72,7 @@ def login(request):
 def logout(request):
     if request.method == "POST":
         auth.logout(request)
-        messages.success(request, "You are now logged out")
+        messages.success(request, "Вы успешно авторизованы")
         return redirect("index")
 
 

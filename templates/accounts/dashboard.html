@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 
-{% block title %}| User Dashboard {% endblock title %}
+{% block title %}| Dashboard {% endblock title %}
 
 {% block content %}
 <section id="showcase-inner" class="py-5 text-white">
@@ -8,7 +8,7 @@
       <div class="row text-center">
         <div class="col-md-12">
           <h1 class="display-4">User Dashboard</h1>
-          <p class="lead">Manage your BT Real Estate account</p>
+          <p class="lead">Управление вашим аккаунтом</p>
         </div>
       </div>
     </div>
@@ -21,7 +21,7 @@
         <ol class="breadcrumb">
           <li class="breadcrumb-item">
             <a href="{% url 'index' %}">
-              <i class="fas fa-home"></i> Home</a>
+              <i class="fas fa-home"></i> Главная</a>
           </li>
           <li class="breadcrumb-item active"> Dashboard</li>
         </ol>
@@ -54,7 +54,7 @@
                     <td>{{ contact.id }}</td>
                     <td>{{ contact.listing }}</td>
                     <td>
-                      <a class="btn btn-light" href="{% url 'listing' contact.listing_id %}">View Listing</a>
+                      <a class="btn btn-light" href="{% url 'listing' contact.listing_id %}">К объявлению</a>
                     </td>
                   </tr>  
                 {% endfor %}

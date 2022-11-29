@@ -1,12 +1,12 @@
 {% extends 'base.html' %}
 {% load static %}
-{% block title %}| About Us {% endblock title %}
+{% block title %}| О нас {% endblock title %}
 {% block content %}
 <section id="showcase-inner" class="py-5 text-white">
 <div class="container">
     <div class="row text-center">
     <div class="col-md-12">
-        <h1 class="display-4">About BT Real Estate</h1>
+        <h1 class="display-4">О нас</h1>
         <p class="lead">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sunt, pariatur!</p>
     </div>
     </div>
@@ -20,9 +20,9 @@
     <ol class="breadcrumb">
         <li class="breadcrumb-item">
         <a href="{% url 'index' %}">
-            <i class="fas fa-home"></i> Home</a>
+            <i class="fas fa-home"></i> Главная</a>
         </li>
-        <li class="breadcrumb-item active"> About</li>
+        <li class="breadcrumb-item active"> О нас</li>
     </ol>
     </nav>
 </div>
@@ -45,11 +45,9 @@
         <div class="card">
           <img class="card-img-top" src="{{ realtor.photo.url }}" alt="Seller of the month">
           <div class="card-body">
-              <h5 class="card-title">Seller Of The Month</h5>
+              <h5 class="card-title">Менеджер месяца</h5>
               <h6 class="text-secondary">{{ realtor.name }}</h6>
-              <p class="card-text">{{ realtor.description }}
-              content.
-              </p>
+              <p class="card-text">{{ realtor.description }}</p>
           </div>
           </div>
         {% endfor %}
