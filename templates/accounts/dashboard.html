@@ -39,11 +39,12 @@
           <h2>Приветствую, {{ user.first_name }}</h2>
           {% if contacts %}
             <p>Вот заявки клиентов по вашим объявлениям.</p>
+            <p>Всего объявлений: {{  }}</p>
             <table class="table">
               <thead>
                 <tr>
                   <th scope="col">#</th>
-                  <th scope="col">Property</th>
+                  <th scope="col">Заголовок объявления</th>
                   <th></th>
                 </tr>
               </thead>

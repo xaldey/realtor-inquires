@@ -63,7 +63,7 @@
                 </select>
               </div>
             </div>
-            <button class="btn btn-secondary btn-block mt-4" type="submit">Отправить форму</button>
+            <button class="btn btn-secondary btn-block mt-4" type="submit">Найти</button>
           </form>
         </div>
       </div>
@@ -100,36 +100,36 @@
               <img class="card-img-top" src="{{ listing.photo_main.url }}" alt="">
               <div class="card-img-overlay">
                 <h2>
-                  <span class="badge badge-secondary text-white">{{ listing.price | intcomma }} руб.</span>
+                  <span class="badge badge-secondary text-white"> {{ listing.price | intcomma }} руб.</span>
                 </h2>
               </div>
               <div class="card-body">
                 <div class="listing-heading text-center">
                   <h4 class="text-primary">{{ listing.title }}</h4>
                   <p>
-                    <i class="fas fa-map-marker text-secondary"></i>{{ listing.zipcode}} {{ listing.state}} {{ listing.city}}</p>
+                    <i class="fas fa-map-marker text-secondary"></i> {{ listing.zipcode}} {{ listing.state}} {{ listing.city}}</p>
                 </div>
                 <hr>
                 <div class="row py-2 text-secondary">
                   <div class="col-6">
-                    <i class="fas fa-th-large"></i>{{ listing.sqft }}</div>
+                    <i class="fas fa-th-large"></i> кв.м.: {{ listing.sq_meters }}</div>
                   <div class="col-6">
-                    <i class="fas fa-car"></i>{{ listing.garage}}</div>
+                    <i class="fas fa-car"></i> Гараж: {{ listing.garage}}</div>
                 </div>
                 <div class="row py-2 text-secondary">
                   <div class="col-6">
-                    <i class="fas fa-bed"></i>{{ listing.bedrooms}}</div>
+                    <i class="fas fa-bed"></i> Спальни: {{ listing.bedrooms}}</div>
                   <div class="col-6">
-                    <i class="fas fa-bath"></i>{{ listing.bathrooms}}</div>
+                    <i class="fas fa-bath"></i> Душевые: {{ listing.bathrooms}}</div>
                 </div>
                 <hr>
                 <div class="row py-2 text-secondary">
                   <div class="col-12">
-                    <i class="fas fa-user"></i>{{ listing.realtor }}</div>
+                    <i class="fas fa-user"></i> Менеджер: {{ listing.realtor }}</div>
                 </div>
                 <div class="row text-secondary pb-2">
                   <div class="col-6">
-                    <i class="fas fa-clock"></i>{{ listing.list_date | timesince}}</div>
+                    <i class="fas fa-clock"></i> Опубликовано: {{ listing.list_date | timesince}}</div>
                 </div>
                 <hr>
                 <a href="{% url 'listing' listing.id %}" class="btn btn-primary btn-block">Подробнее</a>

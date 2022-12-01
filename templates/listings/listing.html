@@ -115,8 +115,8 @@
           <div class="col-md-6">
             <ul class="list-group list-group-flush">
               <li class="list-group-item text-secondary">
-                <i class="fas fa-th-large"></i> Площадь кв.метр:
-                <span class="float-right">{{ listing.sqft }}</span>
+                <i class="fas fa-th-large"></i> кв.м.:
+                <span class="float-right">{{ listing.sq_meters }}</span>
               </li>
               <li class="list-group-item text-secondary">
                 <i class="fas fa-square"></i> Размер участка:
@@ -147,7 +147,7 @@
         <div class="card mb-3">
           <img class="card-img-top" src="{{ listing.realtor.photo.url }}" alt="">
           <div class="card-body">
-            <h5 class="card-title">Property Realtor</h5>
+            <h5 class="card-title">Менеджер</h5>
             <h6 class="text-secondary">{{ listing.realtor }}</h6>
           </div>
         </div>
@@ -202,7 +202,7 @@
             <textarea name="message" class="form-control"></textarea>
           </div>
           <hr>
-          <input type="submit" value="Send" class="btn btn-block btn-secondary">
+          <input type="submit" value="Отправить заявку" class="btn btn-block btn-secondary">
         </form>
       </div>
     </div>

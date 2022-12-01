@@ -1,6 +1,10 @@
 from django.shortcuts import render, redirect
 from django.contrib import messages
-from django.core.mail import send_mail
+from .fill_templates import fill_template
+
+
+# from django.core.mail import send_mail    #отключил возможность отправки заявки по почте
+
 from .models import Contact
 
 
@@ -53,4 +57,6 @@ def contact(request):
             request,
             "Ваш запрос направлен менеджеру. В ближайшее время он с вами свяжется.",
         )
+        fill_template(request)
+
         return redirect("/listings/" + listing_id)
