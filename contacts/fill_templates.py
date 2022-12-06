@@ -49,7 +49,7 @@ def fill_template(request):
 
     # paragraph = doc.add_paragraph("Lorem ipsum dolor sit amet.")
     doc.render(data)
-    doc.save("%Y/%m/%d/" + str(nomDogFull) + "_new.docx")
+    doc.save('media/invoices/' + str(nomDogFull) + "_new.docx")
 
 
 # fill_template()
