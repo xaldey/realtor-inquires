@@ -38,6 +38,16 @@
           >
             <a class="nav-link" href="{% url 'listings' %}">Предложения</a>
           </li>
+        </li>
+        <li
+          {% if 'developer' in request.path %}
+            class="nav-item active mr-3"
+          {% else %}
+          class="nav-item mr-3"
+          {% endif %}
+        >
+          <a class="nav-link" href="{% url 'developers' %}">Застройщики</a>
+        </li>
         </ul>
 
         <ul class="navbar-nav ml-auto">

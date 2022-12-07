@@ -1,0 +1,160 @@
+{% extends 'base.html' %}
+{% load humanize %}
+
+{% block title %}| {{ developer.name }} {% endblock title %}
+
+{% block content %}
+<section id="showcase-inner" class="py-5 text-white">
+  <div class="container">
+    <div class="row text-center">
+      <div class="col-md-12">
+        <h1 class="display-4">{{ developer.name }}</h1>
+        <p class="lead">
+          <i class="fas fa-map-marker"></i>{{ developer.city_main_location }}</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Breadcrumb -->
+<section id="bc" class="mt-3">
+  <div class="container">
+    <nav>
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+          <a href="{% url 'index' %}">Главная</a>
+        </li>
+        <li class="breadcrumb-item">
+          <a href="{% url 'developers' %}">Объявления</a>
+        </li>
+        <li class="breadcrumb-item active">{{ developer.name }}</li>
+      </ol>
+    </nav>
+  </div>
+</section>
+
+<!-- Alerts -->
+{% include 'partials/_alerts.html' %}
+
+<!-- Listing -->
+<section id="developer" class="py-4">
+  <div class="container">
+    <a href="{% url 'developers' %}" class="btn btn-light mb-4">Назад к объявлениям</a>
+    <div class="row">
+      <div class="col-md-9">
+        <!-- Home Main Image -->
+        <img src="{{ developer.logo.url }}" alt="" class="img-main img-fluid mb-3">
+        <!-- Thumbnails -->
+        <div class="row mb-5 thumbs">
+          {% if developer.photo_1 %}
+          <div class="col-md-2">
+            <a href="{{ developer.photo_1.url }}" data-lightbox="home-images">
+              <img src="{{ developer.photo_1.url }}" alt="" class="img-fluid">
+            </a>
+          </div>
+          {% endif %}
+          {% if developer.photo_2 %}
+          <div class="col-md-2">
+            <a href="{{ developer.photo_2.url }}" data-lightbox="home-images">
+              <img src="{{ developer.photo_2.url }}" alt="" class="img-fluid">
+            </a>
+          </div>
+          {% endif %}
+          {% if developer.photo_3 %}
+          <div class="col-md-2">
+            <a href="{{ developer.photo_3.url }}" data-lightbox="home-images">
+              <img src="{{ developer.photo_3.url }}" alt="" class="img-fluid">
+            </a>
+          </div>
+          {% endif %}
+          {% if developer.photo_4 %}
+          <div class="col-md-2">
+            <a href="{{ developer.photo_4.url }}" data-lightbox="home-images">
+              <img src="{{ developer.photo_4.url }}" alt="" class="img-fluid">
+            </a>
+          </div>
+          {% endif %}
+          {% if developer.photo_5 %}
+          <div class="col-md-2">
+            <a href="{{ developer.photo_5.url }}" data-lightbox="home-images">
+              <img src="{{ developer.photo_5.url }}" alt="" class="img-fluid">
+            </a>
+          </div>
+          {% endif %}
+          {% if developer.photo_6 %}
+          <div class="col-md-2">
+            <a href="{{ developer.photo_6.url }}" data-lightbox="home-images">
+              <img src="{{ developer.photo_6.url }}" alt="" class="img-fluid">
+            </a>
+          </div>
+          {% endif %}
+        </div>
+        <!-- Fields -->
+        <div class="row mb-5 fields">
+          <div class="col-md-6">
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item text-secondary">
+                <i class="fas fa-money-bill-alt"></i>Наименование:
+                <span class="float-right">{{ developer.name }} {{ developer.type_of_organization }}</span>
+              </li>
+              <li class="list-group-item text-secondary">
+                <i class="fas fa-bed"></i> Спальни:
+                <span class="float-right">{{ developer.inn }}</span>
+              </li>
+              <li class="list-group-item text-secondary">
+                <i class="fas fa-bath"></i> Душевые:
+                <span class="float-right">{{ developer.inn }}</span>
+              </li>
+              <li class="list-group-item text-secondary">
+                <i class="fas fa-car"></i> Гараж:
+                <span class="float-right">{{ developer.inn }}
+                </span>
+              </li>
+            </ul>
+          </div>
+          <div class="col-md-6">
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item text-secondary">
+                <i class="fas fa-th-large"></i> кв.м.:
+                <span class="float-right">{{ developer.inn }}</span>
+              </li>
+              <li class="list-group-item text-secondary">
+                <i class="fas fa-square"></i> Размер участка:
+                <span class="float-right">{{ developer.inn }}
+                </span>
+              </li>
+              <li class="list-group-item text-secondary">
+                <i class="fas fa-calendar"></i> Дата размещения:
+                <span class="float-right">{{ developer.inn }}</span>
+              </li>
+              <li class="list-group-item text-secondary">
+                <i class="fas fa-bed"></i> Руководитель:
+                <span class="float-right">{{ listing.realtor }}
+                </span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Description -->
+        <div class="row mb-5">
+          <div class="col-md-12">
+            {{ developer.description }}
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="card mb-3">
+          <img class="card-img-top" src="{{ listing.realtor.photo.url }}" alt="">
+          <div class="card-body">
+            <h5 class="card-title">Менеджер</h5>
+            <h6 class="text-secondary">{{ listing.realtor }}</h6>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+{% endblock content %}
