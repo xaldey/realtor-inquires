@@ -1,9 +1,9 @@
 from django.db import models
-from django.utils import timezone
 
 
 class Developer(models.Model):
     name = models.CharField(max_length=255, verbose_name="Наименование застройщика")
+
     type_of_organization = models.CharField(
         max_length=50, verbose_name="Вид организации", blank=True
     )

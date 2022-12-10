@@ -20,11 +20,11 @@ def developer(request, developer_id):
     return render(request, "developers/developer.html", context)
 
 
-def search_developer(request):
+""" def search_developer(request):
     queryset_list = Developer.objects.order_by("name")
 
     # Name of developer
     if "keywords" in request.GET:
         keywords = request.GET["keywords"]
         if keywords:
-            queryset_list = queryset_list.filter(name__icontains=keywords)
+            queryset_list = queryset_list.filter(name__icontains=keywords) """

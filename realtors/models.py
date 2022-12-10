@@ -16,7 +16,7 @@ class Realtor(models.Model):
     email = models.EmailField(max_length=100)
     is_mvp = models.BooleanField(default=False, verbose_name="Признак продавца месяца")
     hire_date = models.DateField(
-        blank=True, default=timezone.now(), verbose_name="Дата найма"
+        blank=True, auto_now_add=True, verbose_name="Дата найма"
     )
 
     def __str__(self):
