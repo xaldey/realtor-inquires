@@ -9,6 +9,17 @@ type_of_organization_choices = {
     "ИП": "ИП",
 }
 
+TYPE_OF_ORG = [
+    (OOO, "ООО"),
+    (OOOSZ, "ООО СЗ"),
+    (OOOISK, "ООО ИСК"),
+    (OOOUK, "ООО УК"),
+    (AO, "АО"),
+    (ZAO, "ЗАО"),
+    (OAO, "ОАО"),
+    (IP, "ИП"),
+]
+
 price_choices = {
     "1000000": "1 000 000 руб",
     "2000000": "2 000 000 руб",

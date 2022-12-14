@@ -11,9 +11,9 @@ class LeadAdmin(admin.ModelAdmin):
 
 
 class ContactAdmin(admin.ModelAdmin):
-    list_display = ("id", "name", "listing", "email", "contact_date")
-    list_display_links = ("id", "name")
-    search_fields = ("name", "listing", "email")
+    list_display = ("id", "last_name", "email", "contact_date")
+    list_display_links = ("id", "last_name")
+    search_fields = ("last_name", "email")
     list_per_page = 25
 
 
